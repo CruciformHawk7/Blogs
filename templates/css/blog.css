@@ -1,0 +1,275 @@
+body, html {
+    padding: 0;
+    margin:0;
+}
+
+.no-margin {
+    margin: 0;
+    padding: 0;
+}
+
+.bg-graphics {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: -1 !important;
+}
+
+.bg-graphics .left-top {
+    position: absolute;
+    right: 5%;
+    top: 30%;
+}
+
+.bg-graphics .top-mid {
+    position: absolute;
+    left: 20%;
+    top: 3%;
+}
+
+.bg-graphics .right-bottom {
+    position: absolute;
+    left: 5%;
+    top: 60%;
+}
+
+.spin-circle {
+    animation: spin 35s infinite alternate ease-in-out;
+}
+
+.dancing-triangle {
+    animation: ant-triangle 35s infinite linear;
+}
+
+.three-fourths {
+    animation: widths 5s infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes ant-triangle {
+    from {
+        stroke-dashoffset: 0;
+    }
+    to {
+        stroke-dashoffset: 102;
+    }
+}
+
+@keyframes widths {
+    from {
+        d: "M10,130 a30,30 0 1,0 30,-30";
+    }
+    to {
+        d: "M0,120 a20,20 0 0,1 20,-20";
+    }
+}
+
+header > nav {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    overflow-x: hidden;
+    background: #fff;
+    z-index: 2 !important;
+    position: fixed;
+    border-bottom: 1px solid #dadada;
+    width: calc(100% - 20px);
+    top: 0;
+}
+
+.nav-eyecandy {
+    background: #fff3 !important;
+    backdrop-filter: blur(12px);
+}
+
+nav > .menu {
+    display: inline-flex;
+}
+
+.menu > h2 {
+    padding-left: 10px;
+}
+
+.navigation {
+    display: inline-flex;
+    margin-right: 30px;
+}
+.navigation > ul {
+    display: flex;
+    margin: 0;
+    align-content: center;
+    align-self: center;
+}
+
+.navigation > ul li {
+    list-style-type: none;
+    display: inline;
+    padding: 0 10px;
+}
+
+.blog-section {
+    margin: 4rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #dadada;
+    border-radius: 10px;
+    background: #fff4;
+    padding: 2rem;
+    box-shadow: 5px 5px 20px grey;
+}
+
+.eyecandy {
+    backdrop-filter: blur(10px);
+}
+
+.first-section {
+    margin-top: 8rem;
+}
+
+.search-area {
+    position: relative;
+    width: 150px;
+    height: 2rem;
+}
+
+.search-area svg {
+    position: absolute;
+    right: 0;
+    z-index: 2;
+    pointer-events: none;
+    padding: 10px 10px 0 0;
+}
+
+.search-area input[type="search"] {
+    position: absolute;
+    width: 150px;
+    padding: 15px 30px 15px 20px;
+    border: 1px solid #0078d7;
+    border-radius: 5px;
+    background: #fff6;
+    height: 1rem;
+    transition: 300ms all ease-in-out;
+}
+
+.search-area input[type="search"]:hover {
+    background: #fff9;
+}
+
+.search-area input[type="search"]:focus {
+    background: #fff;
+}
+
+.cards-layout {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0;
+    overflow-x: scroll;
+}
+
+.card {
+    min-width: 14rem;
+    position: relative;
+    height: 18rem;
+    border: 1px #000 solid;
+    border-radius: 10px;
+    margin: 0 10px;
+    padding: 10px;
+}
+
+.card:before {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 10px;
+    content: "";
+    transition: all 200ms ease-in;
+    background: #000c;
+    left: 0;
+    top: 0;
+}
+
+.card:hover:before {
+    opacity: 1;
+}
+
+.card.eyecandy:before {
+    backdrop-filter: blur(12px);
+}
+
+.card > h2 {
+    mix-blend-mode: difference;
+    color: #fff;
+    display: none;
+}
+
+.card:hover h2 {
+    display: block;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+    border-radius: 50%;
+}
+
+
+
