@@ -8,9 +8,6 @@
     <script>
         //Eyecandy Server
         $().ready(() => {
-            $('.card').on('click', (event) => {
-                $(event.target).addClass('card-click');
-            });
             $('#eye-switch').change(() => {
                 if ($('#eye-switch').prop("checked")) {
                     $('header > nav').addClass('nav-eyecandy');
@@ -26,6 +23,10 @@
                     $('.card').removeClass('eyecandy');
                 }
             });
+            $('.switch').hover(
+                () => { $('.warning-tooltip').stop().fadeIn(300).css("display","flex");  },
+                () => { $('.warning-tooltip').stop().fadeOut(300); }
+            );
         });
     </script>
 </head>
@@ -35,6 +36,15 @@
 <!--                width: 100vw; height: 900px; z-index: -1"></div>-->
 
     <section class="bg-graphics">
+        <div class="warning-tooltip">
+            <svg width="10px" viewBox="0 0 770 639">
+                <path d="M383.75 256L0 639.75h767.5L383.75 256z"/>
+            </svg>
+            <div style="background: black; color: #fff; padding: 2px;
+                        text-align: center; border-radius: 5px;">
+                Warning! Turning this on may result in high CPU usage.
+            </div>
+        </div>
         <div class="left-top">
             <svg viewBox="0 0 400 400" width="150" height="150">
                 <circle cx="200" cy="200" r="184" stroke-dasharray="60, 130" stroke="#FFC000"
@@ -92,10 +102,10 @@
             <div style="display:flex; flex-direction: row; align-items: center;">
                 <label class="switch">
                     <input type="checkbox" id="eye-switch">
-                    <span class="slider"></span>
+                    <div class="slider"></div>
                 </label>
                 <div style="margin: 0 10px;">
-                    <svg viewBox="0 0 470 470" width="30px" height="30px">
+                    <svg viewBox="0 0 470 470" width="30px" height="30px" class="candy">
                         <g>
                             <path d="M202.029,149.875c-2.929,2.93-2.929,7.678,0,10.607c1.465,1.464,3.385,2.196,5.304,2.196s3.839-0.732,5.304-2.196   c12.329-12.332,32.395-12.332,44.729,0c2.928,2.928,7.677,2.929,10.606-0.001c2.929-2.929,2.929-7.678-0.001-10.606   C249.791,131.695,220.208,131.695,202.029,149.875z"/>
                             <path d="M180.816,171.088l-30.941,30.941c-2.929,2.93-2.929,7.678,0,10.607c1.465,1.464,3.385,2.196,5.304,2.196   s3.839-0.732,5.304-2.196l30.941-30.941c2.929-2.93,2.929-7.678,0-10.607C188.493,168.16,183.745,168.16,180.816,171.088z"/>
@@ -117,7 +127,7 @@
     </header>
 
     <section class="blog-section first-section">
-        <h1 id="pinned" class="no-margin">Pinned Blog Posts</h1>
+        <h1 id="pinned" class="no-margin headings">Pinned Blog Posts</h1>
         <div class="cards-layout">
             <div class="card card-size" style="background-image: url('https://cdn.pixabay.com/photo/2015/03/26/09/47/sky-690293__340.jpg');">
                 <h2>Test</h2>
@@ -283,7 +293,7 @@
     </section>
 
     <section class="blog-section">
-        <h1 id="recent" class="no-margin">Recent Blog Posts</h1>
+        <h1 id="recent" class="no-margin headings">Recent Blog Posts</h1>
         <div class="cards-layout">
             <div class="card-size waiting">
             </div>
@@ -297,7 +307,7 @@
     </section>
 
     <section class="blog-section">
-        <h1 id="final" class="no-margin">Most Visited Posts</h1>
+        <h1 id="final" class="no-margin headings">Most Visited Posts</h1>
         <div class="internet-error">
             <svg focusable="false" viewBox="0 0 512 512" width="100px" height="100px">
                 <defs>
@@ -321,7 +331,7 @@
                     </path>
                 </g>
             </svg>
-            <h1>There was an error when connecting.</h1>
+            <h1 class="no-margin">There was an error when connecting.</h1>
             <p>Please check your internet connection and try again.</p>
         </div>
     </section>

@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&family=Oxygen');
+
+h1,h2,h3,h4,h5,h6,.headings{
+    font-family: 'Oxygen', 'Segoe UI', 'Helvetica', sans-serif !important;
+}
+
+*, .body-font {
+    font-family: 'Fira Sans', 'Segoe UI', 'Helvetica', serif;
+}
+
 body, html {
     padding: 0;
     margin:0;
@@ -160,6 +170,7 @@ nav > .menu {
 
 .eyecandy {
     backdrop-filter: blur(10px);
+    will-change: transform;
 }
 
 .first-section {
@@ -252,6 +263,7 @@ nav > .menu {
 
 .card.eyecandy:before {
     backdrop-filter: blur(12px);
+    will-change: transform;
 }
 
 .card > h2 {
@@ -290,6 +302,17 @@ nav > .menu {
     height: 0;
 }
 
+.warning-tooltip {
+    position: absolute;
+    top: 55px;
+    display: none;
+    right: 130px;
+    z-index: 100;
+    width: 220px;
+    flex-direction: column;
+    align-items: center;
+}
+
 .slider {
     position: absolute;
     cursor: pointer;
@@ -314,6 +337,7 @@ nav > .menu {
     -webkit-transition: .4s;
     transition: .4s;
     border-radius: 50%;
+    pointer-events: all;
 }
 
 input:checked + .slider {
