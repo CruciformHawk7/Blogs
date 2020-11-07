@@ -19,6 +19,11 @@ body, html {
     padding: 0;
 }
 
+.title-text {
+    opacity: 0;
+    transition: opacity 200ms ease-in;
+}
+
 .bg-graphics {
     position: fixed;
     width: 100%;
@@ -66,7 +71,6 @@ header > nav {
     background: #fff;
     z-index: 2 !important;
     position: fixed;
-    border-bottom: 1px solid #dadada;
     width: calc(100% - 20px);
     top: 0;
 }
@@ -96,6 +100,15 @@ nav > .menu {
     margin: 0;
     align-content: center;
     align-self: center;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
 }
 
 .navigation > ul li {
