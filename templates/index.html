@@ -7,27 +7,27 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         //Eyecandy Server
-        $().ready(() => {
-            $('#eye-switch').change(() => {
-                if ($('#eye-switch').prop("checked")) {
-                    $('header > nav').addClass('nav-eyecandy');
-                    $('.blog-section').addClass('eyecandy');
-                    $('.left-top > svg').addClass('spin-circle');
-                    $('.triangle-svg > polygon').addClass('dancing-triangle');
-                    $('.card').addClass('eyecandy');
-                } else {
-                    $('header > nav').removeClass('nav-eyecandy');
-                    $('.blog-section').removeClass('eyecandy');
-                    $('.left-top > svg').removeClass('spin-circle');
-                    $('.triangle-svg > polygon').removeClass('dancing-triangle');
-                    $('.card').removeClass('eyecandy');
-                }
-            });
-            $('.switch').hover(
-                () => { $('.warning-tooltip').stop().fadeIn(300).css("display","flex");  },
-                () => { $('.warning-tooltip').stop().fadeOut(300); }
-            );
-        });
+        // $().ready(() => {
+        //     $('#eye-switch').change(() => {
+        //         if ($('#eye-switch').prop("checked")) {
+        //             $('header > nav').addClass('nav-eyecandy');
+        //             $('.blog-section').addClass('eyecandy');
+        //             $('.left-top > svg').addClass('spin-circle');
+        //             $('.triangle-svg > polygon').addClass('dancing-triangle');
+        //             $('.card').addClass('eyecandy');
+        //         } else {
+        //             $('header > nav').removeClass('nav-eyecandy');
+        //             $('.blog-section').removeClass('eyecandy');
+        //             $('.left-top > svg').removeClass('spin-circle');
+        //             $('.triangle-svg > polygon').removeClass('dancing-triangle');
+        //             $('.card').removeClass('eyecandy');
+        //         }
+        //     });
+        //     $('.switch').hover(
+        //         () => { $('.warning-tooltip').stop().fadeIn(300).css("display","flex");  },
+        //         () => { $('.warning-tooltip').stop().fadeOut(300); }
+        //     );
+        // });
     </script>
 </head>
 
@@ -35,62 +35,68 @@
 <!--    <div style="position:absolute; background: url('assets/Artboard 1@4x.png'); background-size:100% 100%;-->
 <!--                width: 100vw; height: 900px; z-index: -1"></div>-->
 
+<!--<section class="bg-graphics">
+    <div class="warning-tooltip">
+        <svg width="10px" viewBox="0 0 770 639">
+            <path d="M383.75 256L0 639.75h767.5L383.75 256z"/>
+        </svg>
+        <div style="background: black; color: #fff; padding: 2px;
+                    text-align: center; border-radius: 5px;">
+            Warning! Turning this on may result in high CPU usage.
+        </div>
+    </div>
+    <div class="left-top">
+        <svg viewBox="0 0 400 400" width="150" height="150">
+            <circle cx="200" cy="200" r="184" stroke-dasharray="60, 130" stroke="#FFC000"
+                    stroke-width="22" stroke-linecap="round" fill="transparent"/>
+            <circle cx="200" cy="200" r="100" stroke="none" fill="#5B9BD5" />
+        </svg>
+    </div>
+    <div class="top-mid">
+        <svg viewbox="0 0 400 400" width="200px" height="200px">
+            <defs>
+                <linearGradient id="orange">
+                    <stop offset="100%" stop-color="#FFB74D" />
+                    <stop offset="0%" stop-color="#FFC107" />
+                </linearGradient>
+            </defs>
+            <g transform="rotate(-30)">
+                <rect x="60" y="180" width="200" height="60" rx="30" fill="none" stroke="#ccc"
+                      stroke-width="3">
+                    <animate attributeName="x" values="60;65;60" dur="10s" repeatCount="indefinite" />
+                </rect>
+                <animateTransform attributeName="transform" type="rotate" values="-30;-35;-30"  dur="30s"
+                                  repeatCount="indefinite" />
+            </g>
+            <g transform="rotate(-50)">
+                <rect x="-160" y="180" width="300" height="60" rx="30" fill="url(#orange)" stroke="#FFC107"
+                      stroke-width="3" >
+                    <animate attributeName="x" values="-160;-180;-160" dur="10s" repeatCount="indefinite" />
+                </rect>
+                <animateTransform attributeName="transform" type="rotate" values="-50;-45;-50"  dur="30s"
+                                  repeatCount="indefinite"></animateTransform>
+            </g>
+        </svg>
+    </div>
+    <div class="right-bottom">
+        <svg viewBox="0 0 120 120" width="150" height="150" class="triangle-svg">
+            <polygon points="100,10 100,100 10,50" stroke="#ED7D31"
+                     stroke-width="3" fill="transparent"
+                     stroke-dasharray="16, 18" stroke-linejoin="round"></polygon>
+        </svg>
+    </div>
+</section> -->
+
     <section class="bg-graphics">
-        <div class="warning-tooltip">
-            <svg width="10px" viewBox="0 0 770 639">
-                <path d="M383.75 256L0 639.75h767.5L383.75 256z"/>
-            </svg>
-            <div style="background: black; color: #fff; padding: 2px;
-                        text-align: center; border-radius: 5px;">
-                Warning! Turning this on may result in high CPU usage.
-            </div>
-        </div>
-        <div class="left-top">
-            <svg viewBox="0 0 400 400" width="150" height="150">
-                <circle cx="200" cy="200" r="184" stroke-dasharray="60, 130" stroke="#FFC000"
-                        stroke-width="22" stroke-linecap="round" fill="transparent"/>
-                <circle cx="200" cy="200" r="100" stroke="none" fill="#5B9BD5" />
-            </svg>
-        </div>
-        <div class="top-mid">
-            <svg viewbox="0 0 400 400" width="200px" height="200px">
-                <defs>
-                    <linearGradient id="orange">
-                        <stop offset="100%" stop-color="#FFB74D" />
-                        <stop offset="0%" stop-color="#FFC107" />
-                    </linearGradient>
-                </defs>
-                <g transform="rotate(-30)">
-                    <rect x="60" y="180" width="200" height="60" rx="30" fill="none" stroke="#ccc"
-                          stroke-width="3">
-                        <animate attributeName="x" values="60;65;60" dur="10s" repeatCount="indefinite" />
-                    </rect>
-                    <animateTransform attributeName="transform" type="rotate" values="-30;-35;-30"  dur="30s"
-                                      repeatCount="indefinite" />
-                </g>
-                <g transform="rotate(-50)">
-                    <rect x="-160" y="180" width="300" height="60" rx="30" fill="url(#orange)" stroke="#FFC107"
-                          stroke-width="3" >
-                        <animate attributeName="x" values="-160;-180;-160" dur="10s" repeatCount="indefinite" />
-                    </rect>
-                    <animateTransform attributeName="transform" type="rotate" values="-50;-45;-50"  dur="30s"
-                                      repeatCount="indefinite"></animateTransform>
-                </g>
-            </svg>
-        </div>
-        <div class="right-bottom">
-            <svg viewBox="0 0 120 120" width="150" height="150" class="triangle-svg">
-                <polygon points="100,10 100,100 10,50" stroke="#ED7D31"
-                         stroke-width="3" fill="transparent"
-                         stroke-dasharray="16, 18" stroke-linejoin="round"></polygon>
-            </svg>
+        <div class="search-list">
+
         </div>
     </section>
 
     <header>
-        <nav>
+        <nav class="nav-eyecandy">
             <div class="menu">
-                <h2 class="no-margin" style="padding-right: 130px;">Nikhil's Blog</h2>
+                <h2 class="no-margin" >Nikhil's Blog</h2>
             </div>
             <div class="navigation">
                 <ul class="no-margin">
@@ -100,7 +106,7 @@
                 </ul>
             </div>
             <div style="display:flex; flex-direction: row; align-items: center;">
-                <label class="switch">
+                <!--<label class="switch">
                     <input type="checkbox" id="eye-switch">
                     <div class="slider"></div>
                 </label>
@@ -113,7 +119,7 @@
                             <path d="M94.84,329.656c-8.358,5.643-17.059,11.859-25.857,18.478c-3.311,2.49-3.976,7.192-1.486,10.502   c1.475,1.96,3.723,2.992,6,2.992c1.569,0,3.151-0.49,4.502-1.506c8.597-6.466,17.087-12.533,25.234-18.034   c3.434-2.317,4.338-6.979,2.02-10.412C102.934,328.242,98.273,327.337,94.84,329.656z"/>
                         </g>
                     </svg>
-                </div>
+                </div>-->
                 <div class="search-area">
                     <svg width="14px" height="14px" viewBox="0 0 28 28">
                         <g fill="#212121">
@@ -292,19 +298,19 @@
         </div>
     </section>
 
-    <section class="blog-section">
-        <h1 id="recent" class="no-margin headings">Recent Blog Posts</h1>
-        <div class="cards-layout">
-            <div class="card-size waiting">
-            </div>
-            <div class="card-size waiting">
-            </div>
-            <div class="card-size waiting">
-            </div>
-            <div class="card-size waiting">
-            </div>
-        </div>
-    </section>
+<!--    <section class="blog-section">-->
+<!--        <h1 id="recent" class="no-margin headings">Recent Blog Posts</h1>-->
+<!--        <div class="cards-layout">-->
+<!--            <div class="card-size waiting">-->
+<!--            </div>-->
+<!--            <div class="card-size waiting">-->
+<!--            </div>-->
+<!--            <div class="card-size waiting">-->
+<!--            </div>-->
+<!--            <div class="card-size waiting">-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
 
     <section class="blog-section">
         <h1 id="final" class="no-margin headings">Most Visited Posts</h1>

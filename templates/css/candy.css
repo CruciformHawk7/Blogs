@@ -1,0 +1,137 @@
+.bg-graphics .left-top {
+    position: absolute;
+    right: 5%;
+    top: 30%;
+}
+
+.bg-graphics .top-mid {
+    position: absolute;
+    left: 20%;
+    top: 3%;
+}
+
+.bg-graphics .right-bottom {
+    position: absolute;
+    left: 5%;
+    top: 60%;
+}
+
+.spin-circle {
+    animation: spin 35s infinite alternate ease-in-out;
+}
+
+.dancing-triangle {
+    animation: ant-triangle 35s infinite linear;
+}
+
+.three-fourths {
+    animation: widths 5s infinite;
+}
+
+@keyframes load {
+    0% { background-position: -200% 0; }
+    100% { background-position: 0 0; }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes ant-triangle {
+    from {
+        stroke-dashoffset: 0;
+    }
+    to {
+        stroke-dashoffset: 102;
+    }
+}
+
+@keyframes widths {
+    from {
+        d: "M10,130 a30,30 0 1,0 30,-30";
+    }
+    to {
+        d: "M0,120 a20,20 0 0,1 20,-20";
+    }
+}
+
+.eyecandy {
+    backdrop-filter: blur(10px);
+    will-change: transform;
+}
+
+.card.eyecandy:before {
+    backdrop-filter: blur(12px);
+    will-change: transform;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.warning-tooltip {
+    position: absolute;
+    top: 55px;
+    display: none;
+    right: 130px;
+    z-index: 100;
+    width: 220px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+    pointer-events: all;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+    border-radius: 50%;
+}
