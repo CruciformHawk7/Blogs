@@ -6,6 +6,7 @@ h1,h2,h3,h4,h5,h6,.headings{
 
 *, .body-font {
     font-family: 'Fira Sans', 'Segoe UI', 'Helvetica', serif;
+    user-select: none;
 }
 
 body, html {
@@ -33,7 +34,7 @@ body, html {
     color: #000;
     transition: all 200ms ease-in-out;
     cursor: default;
-    border-bottom: 2px hidden #0078d7;
+    border-bottom: 2px solid #0000;
 }
 
 .link:hover {
@@ -52,6 +53,11 @@ body, html {
     background-size: 200% auto;
 }
 
+@keyframes load {
+    0% { background-position: -200% 0; }
+    100% { background-position: 0 0; }
+}
+
 header > nav {
     padding: 10px;
     display: flex;
@@ -66,8 +72,11 @@ header > nav {
 }
 
 .nav-eyecandy {
-    background: #fff3 !important;
-    backdrop-filter: blur(12px);
+    background: #fffa !important;
+    backdrop-filter: blur(8px);
+    /* Don't surprise the browser */
+    will-change: transform;
+    overflow: hidden;
 }
 
 nav > .menu {
@@ -103,7 +112,7 @@ nav > .menu {
     border-radius: 10px;
     background: #fff4;
     padding: 2rem;
-    box-shadow: 5px 5px 20px grey;
+    box-shadow: 5px 5px 20px #333;
 }
 
 .first-section {
