@@ -26,7 +26,7 @@ body, html {
 
 .bg-graphics {
     position: fixed;
-    width: 100%;
+    width: calc(100% - 50px);
     height: 100%;
     top: 0;
     z-index: -1 !important;
@@ -61,6 +61,14 @@ body, html {
 @keyframes load {
     0% { background-position: -200% 0; }
     100% { background-position: 0 0; }
+}
+
+body {
+    display: flex;
+}
+
+body > section {
+    flex: 0 0 80%;
 }
 
 header > nav {
@@ -107,8 +115,9 @@ nav > .menu {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100vh;
+}
+
+.hero > div {
 }
 
 .navigation > ul li {
