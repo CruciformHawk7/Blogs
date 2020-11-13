@@ -303,3 +303,19 @@ nav > .menu {
     align-items: center;
     align-self: center;
 }
+
+h1 {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.hero-text-anim {
+    animation: size-change 1600ms ease;
+}
+
+@keyframes size-change {
+    0% { transform: scale(5.5); opacity: 0; }
+    80% { transform: scale(5.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
