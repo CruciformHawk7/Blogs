@@ -2,10 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nikhil's Blog</title>
     <link rel="stylesheet" href="css/blog.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+    <!-- Development -->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/jquery.mousewheel.min.js"></script>
+    <!-- Production -->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>-->
     <script>
         $().ready(() => {
             var halfWindow = ($(window).width())/2;
@@ -14,7 +19,7 @@
                 halfWindow = ($(window).width())/2;
             });
 
-            $('html, body').mousewheel(function(e, delta) {
+            $('.pc-body').mousewheel(function(e, delta) {
                 // if (delta > 0)
                     // $(this).stop().animate( { scrollLeft: `-=${halfWindow}` }, 300);
                 // else
@@ -23,8 +28,8 @@
                 e.preventDefault();
             });
 
-            $(window).scroll(function() {
-                let height = $(window).scrollLeft();
+            $('.pc-body').scroll(function() {
+                let height = $('.pc-body').scrollLeft();
 
                 if(height  > 366) {
                     $('.title-text').stop().css('opacity', '1');
@@ -35,25 +40,23 @@
                 }
             });
 
+            $('.search-area').focusin(()=>{
+                $('.search-list').slideDown().css("display", "flex");
+            });
+            $('.search-area').focusout(() => {
+                $('.search-list').slideUp();
+            });
         });
     </script>
 </head>
 
 <body>
-<div style="position:absolute; background: url('assets/Artboard 1@4x-8.png'); background-size: 100% 100%;
-            top:0; background-repeat: no-repeat; left:0; width: 100%; height: 100%; z-index: -1; overflow: hidden;">
-</div>
-<h1 style="position: absolute; top: 0; left: 0; margin: 0;
-           font-size: 40px; z-index: 1000; background: #fff; padding-top: 32px;
-           padding-left: 10%;">
-    Nikhil's Blog
-</h1>
-    <section class="bg-graphics">
-        <div class="search-list">
-
-        </div>
-    </section>
-
+<div class="pc-body" style="position: relative">
+    <h1 style="position: absolute; top: 0; left: 0; margin: 0;
+               font-size: 40px; z-index: 95; background: #fff; padding-top: 32px;
+               padding-left: 5vw;">
+        Nikhil's Blog
+    </h1>
     <header>
         <nav class="nav-eyecandy">
             <div class="menu">
@@ -103,7 +106,7 @@
     <section class="blog-section">
         <h1 id="pinned" class="no-margin headings">Pinned Blog Posts</h1>
         <div class="cards-layout">
-            <div class="card card-size" style="background-image: url('https://cdn.pixabay.com/photo/2015/03/26/09/47/sky-690293__340.jpg');">
+            <div class="card card-size" style="background-image: url('assets/placeholder/sky.jpg');">
                 <h2>Test</h2>
                 <div class="inert">
                     <div class="tags-container">
@@ -143,7 +146,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card card-size" style="background-image: url('https://image.freepik.com/free-photo/brick-wall-painted-white_1194-7526.jpg')">
+            <div class="card card-size" style="background-image: url('assets/placeholder/autumn-tree.jpg')">
                 <h2>Test</h2>
                 <div class="inert">
                     <div class="tags-container">
@@ -183,7 +186,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card card-size" style="background-image: url('https://images.freeimages.com/images/small-previews/a0d/autumn-tree-1382832.jpg')">
+            <div class="card card-size" style="background-image: url('assets/placeholder/brickwall.png')">
                 <h2>Test</h2>
                 <div class="inert">
                     <div class="tags-container">
@@ -317,5 +320,38 @@
         </div>
     </footer>
 
+
+    <section class="fg-content">
+        <div class="search-list">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20px"
+                 viewBox="0 0 320 200">
+                <path fill="#fff" stroke="#eee" stroke-width="30"
+                      d="M279 224H41c-21.4 0-32.1-25.9-17-41L143 64c9.4-9.4 24.6-9.4 33.9 0l119 119c15.2 15.1 4.5 41-16.9 41z">
+                </path>
+            </svg>
+            <div class="search-items">
+                <div class="search-item">
+                    Item1
+                </div>
+                <div class="search-item">
+                    Item2
+                </div>
+                <div class="search-item">
+                    Item3
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<div class="mobile-body">
+    <div class="mobile-cover">
+        <div class="mobile-message">
+            <h1>This website isn't designed to work on a mobile device.</h1>
+            <p>Please consider visiting the website on a computer.
+                The mobile version is work-in-progress.</p>
+        </div>
+    </div>
+
+</div>
 </body>
 </html>

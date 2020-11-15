@@ -25,12 +25,11 @@ body, html {
     transition: opacity 200ms ease-in;
 }
 
-.bg-graphics {
+.fg-content {
     position: fixed;
-    width: calc(100% - 50px);
+    width: calc(100% - 10px);
     height: 100%;
     top: 0;
-    z-index: -1 !important;
 }
 
 .link, .link:visited {
@@ -64,16 +63,11 @@ body, html {
     100% { background-position: 0 0; }
 }
 
-body {
-    display: flex;
-    height: calc(100vh - 18px);
-    scroll-behavior: smooth;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    align-items: center;
+.pc-body{
+    display: none;
 }
 
-body > section, body > footer {
+.pc-body > section, .pc-body > footer {
     flex: 0 0 80%;
 }
 
@@ -83,7 +77,7 @@ footer {
     max-width: 100vw;
     margin-left: -300px;
     width: 100vw;
-    background: url('../assets/bg2-Artboard 1@4x-8.png');
+    background: url('../assets/footer-lq.png');
     background-size: 100% 100%;
     z-index: -1;
     overflow: hidden;
@@ -135,6 +129,14 @@ nav > .menu {
     justify-content: center;
     align-items: center;
     min-width: 80vw;
+    background: url('../assets/first-lq.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    margin-right: -8vw;
 }
 
 .hero > div {
@@ -304,18 +306,62 @@ nav > .menu {
     align-self: center;
 }
 
-h1 {
-    transform: scale(1);
-    opacity: 1;
+.mobile-cover {
+    width: 100vw;
+    height: calc(100vh - 18px);
+    background: #000e;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    color: white;
 }
 
-.hero-text-anim {
-    animation: size-change 1600ms ease;
+.mobile-body{
+    display: block;
 }
 
-@keyframes size-change {
-    0% { transform: scale(5.5); opacity: 0; }
-    80% { transform: scale(5.5); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
+.search-list {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    z-index: 100;
+    flex-direction: column;
+    align-items: center;
 }
 
+.search-items {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}
+
+.search-item {
+    padding: 15px 5px;
+    border-bottom: 1px solid #dadada;
+    transition: background-color 200ms ease-in-out;
+}
+
+.search-item:hover {
+    background: #eee;
+}
+
+@media only screen and (min-width: 400px) {
+    .mobile-body {
+        display: none;
+    }
+
+    .pc-body {
+        display: flex;
+        height: 100vh;
+        scroll-behavior: smooth;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        align-items: center;
+    }
+
+}
