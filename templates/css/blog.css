@@ -30,6 +30,7 @@ body, html {
     width: calc(100% - 10px);
     height: 100%;
     top: 0;
+    pointer-events: none;
 }
 
 .link, .link:visited {
@@ -295,6 +296,11 @@ nav > .menu {
     padding-right: 4px;
 }
 
+.tag:hover {
+    background: linear-gradient(#ccc, #bbb);
+    cursor: pointer;
+}
+
 .tag:before {
     position: absolute;
 }
@@ -344,6 +350,7 @@ nav > .menu {
     padding: 15px 5px;
     border-bottom: 1px solid #dadada;
     transition: background-color 200ms ease-in-out;
+    pointer-events: visible;
 }
 
 .search-item:hover {
