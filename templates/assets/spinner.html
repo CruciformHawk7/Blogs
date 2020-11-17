@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Spinner</title>
+    <style>        
+    </style>
+  </head>
+  <body>
+    <svg viewBox="0 0 300 300" width="300px" height="300px">
+    <defs>
+        <linearGradient id="load1" gradientTransform="rotate(90)">
+            <stop offset="0%" stop-color="#2196F3" />
+            <stop offset="80%" stop-color="#fff0" />
+            <stop offset="100%" stop-color="#fff0" />
+        </linearGradient>
+    </defs>
+        <circle cx="150" cy="150" r="100" stroke-width="50" stroke="url(#load1)" 
+            stroke-dasharray="210" fill="#fff0" stroke-linecap="round">
+            <animateTransform attributeName="transform" attributeType="XML" 
+                    type="rotate" from="360 150 150" to="0 150 150" dur="1s" repeatCount="indefinite" calcMode="spline" />
+        </circle>
+    </svg>
+  </body>
+</html>

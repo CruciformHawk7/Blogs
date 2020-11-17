@@ -1,0 +1,68 @@
+<html>
+<head>
+    <style>
+        path{
+            stroke-dasharray: 2090;
+            stroke-dashoffset: 2090;
+            animation: growth 3s infinite forwards ease;
+        }
+        
+        .main {
+            animation-delay: 0;
+        }
+        
+        .trailer-1 {
+            animation-delay: -100ms;
+        }
+        
+        .trailer-2 {
+            animation-delay: -200ms;
+        }
+        
+        @keyframes growth {
+            0% {
+                stroke-dashoffset: 4180;
+            }
+            50% {
+                stroke-dashoffset: 2100;
+            }
+            60% {
+                stroke-dasharray: 1080;
+            }
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1903 674.16" width="60vw">
+    <defs>
+        <linearGradient id="linear-gradient" x1="240" y1="647.46" x2="2082" y2="647.46" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#fff"/>
+            <stop offset="0" stop-color="#f15a24"/>
+            <stop offset="1" stop-color="#ed1e79"/>
+        </linearGradient>
+        <linearGradient id="linear-gradient-2" x1="205" y1="683.55" x2="2072" y2="683.55" xlink:href="#linear-gradient"/>
+        <linearGradient id="linear-gradient-3" x1="274" y1="613.19" x2="2094" y2="613.19" xlink:href="#linear-gradient"/>
+        <linearGradient id="linear-gradient-4" x1="257" y1="529.99" x2="2016" y2="529.99" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#fff"/>
+            <stop offset="0" stop-color="aqua"/>
+            <stop offset="1" stop-color="#3fa9f5"/>
+        </linearGradient>
+        <linearGradient id="linear-gradient-5" x1="220" y1="498.23" x2="2006" y2="498.23" xlink:href="#linear-gradient-4"/>
+        <linearGradient id="linear-gradient-6" x1="191" y1="465.93" x2="1991" y2="465.93" xlink:href="#linear-gradient-4"/>
+    </defs>
+    <g id="Pink">
+        <path d="M273.5,659.5c82.09,70,220.44,165.84,397,173.45,380.87,16.42,567.68-393.72,908-370.51,111.75,7.63,277.92,64.56,470,323.37" transform="translate(-191 -228.34)" style="fill:none;stroke-linecap:round;stroke-miterlimit:10;stroke-width:67px;opacity:0.75;stroke:url(#linear-gradient)" class="main"/>
+        <path d="M238.5,672c170.26,161,317.92,195.59,422,197,373.71,5,572.92-384.18,908-370.51,130.25,5.32,294.89,73.06,470,323.37" transform="translate(-191 -228.34)" style="fill:none;stroke-linecap:round;stroke-miterlimit:10;stroke-width:67px;stroke:url(#linear-gradient-2)" class="trailer-1"/>
+        <path d="M307.5,641.5c170.83,146.3,310.57,156.84,374,155,174.07-5,343.36-119.48,455-196,79.3-54.35,130.44-102,235-137,16.41-5.49,120-39.34,226-33,269.27,16.11,441.86,285,463,319" transform="translate(-191 -228.34)" style="fill:none;stroke-linecap:round;stroke-miterlimit:10;stroke-width:67px;opacity:0.22;stroke:url(#linear-gradient-3)" class="trailer-2"/>
+    </g>
+    <g id="Blue">
+        <path d="M290.5,513.5c93.11-92.27,206.72-166.35,342-182,396.24-45.84,637.6,449,1024,396,99.52-13.66,210.7-63.94,326-185" transform="translate(-191 -228.34)" style="fill:none;stroke-linecap:round;stroke-miterlimit:10;stroke-width:67px;opacity:0.25;stroke:url(#linear-gradient-4)" class="main"/>
+        <path d="M253.5,503.5c160.52-158.15,298.79-196.76,391-205,408.78-36.51,651.68,458,1024,396,142.29-23.71,244.46-118.87,304-187" transform="translate(-191 -228.34)" style="fill:none;stroke-linecap:round;stroke-miterlimit:10;stroke-width:67px;opacity:0.75;stroke:url(#linear-gradient-5)" class="trailer-1"/>
+        <path d="M224.5,494.5c169.16-178.89,315.78-223.07,417-231.16,403.45-32.24,644.07,464.1,1014,401.16,140.18-23.85,241.22-118.2,302-189" transform="translate(-191 -228.34)" style="fill:none;stroke-linecap:round;stroke-miterlimit:10;stroke-width:67px;stroke:url(#linear-gradient-6)" class="trailer-2"/>
+    </g>
+</svg>
+</body>
+</html>
