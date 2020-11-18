@@ -13,29 +13,20 @@
 <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>-->
     <script>
         $().ready(() => {
-            var halfWindow = ($(window).width())/2;
+            $(window).scroll(function() {
+                let height = $(window).scrollTop();
 
-            $(window).resize(() => {
-                halfWindow = ($(window).width())/2;
-            });
-
-            $('.pc-body').mousewheel(function(e, delta) {
-                // if (delta > 0)
-                    // $(this).stop().animate( { scrollLeft: `-=${halfWindow}` }, 300);
-                // else
-                    // $(this).stop().animate( { scrollLeft: `+=${halfWindow}` }, 300);
-                this.scrollLeft -= (delta * halfWindow);
-                e.preventDefault();
-            });
-
-            $('.pc-body').scroll(function() {
-                let height = $('.pc-body').scrollLeft();
-
-                if(height  > 366) {
-                    $('.title-text').stop().css('opacity', '1');
+                if(height > 105) {
+                    $('.title-text').css('font-size', '24px')
+                        .css('margin-left', '0')
+                        .css('margin-right', '80px');
+                    $('.link').removeClass('stretch');
                     $('header > nav').css('border-bottom', '1px solid #dadada');
                 } else {
-                    $('.title-text').css('opacity', '0').stop();
+                    $('.title-text').css('font-size', '32px')
+                        .css('margin-left', '80px')
+                        .css('margin-right', '0');
+                    $('.link').addClass('stretch');
                     $('header > nav').css('border-bottom', 'none');
                 }
             });
@@ -50,13 +41,7 @@
     </script>
 </head>
 
-<body>
-<div class="pc-body" style="position: relative">
-    <h1 style="position: absolute; top: 0; left: 0; margin: 0;
-               font-size: 40px; z-index: 95; background: #fff; padding-top: 32px;
-               padding-left: 5vw;">
-        Nikhil's Blog
-    </h1>
+<body class="pc-body">
     <header>
         <nav class="nav-eyecandy">
             <div class="menu">
@@ -64,9 +49,9 @@
             </div>
             <div class="navigation">
                 <ul class="no-margin">
-                    <li><a href="#" class="link active">Blog Home</a></li>
-                    <li><a href="#" class="link">Categories</a></li>
-                    <li><a href="#" class="link">All Posts</a></li>
+                    <li><a href="#" class="link active stretch">Blog Home</a></li>
+                    <li><a href="#" class="link stretch">Categories</a></li>
+                    <li><a href="#" class="link stretch">All Posts</a></li>
                 </ul>
             </div>
             <div style="display:flex; flex-direction: row; align-items: center;">
@@ -316,7 +301,7 @@
 
     <footer>
         <div>
-            <h1 style="margin: 50px 0 0 30vw;">Check this project on GitHub.</h1>
+            <h1>Check this project on GitHub.</h1>
         </div>
     </footer>
 
@@ -342,16 +327,5 @@
             </div>
         </div>
     </section>
-</div>
-<div class="mobile-body">
-    <div class="mobile-cover">
-        <div class="mobile-message">
-            <h1>This website isn't designed to work on a mobile device.</h1>
-            <p>Please consider visiting the website on a computer.
-                The mobile version is work-in-progress.</p>
-        </div>
-    </div>
-
-</div>
 </body>
 </html>
